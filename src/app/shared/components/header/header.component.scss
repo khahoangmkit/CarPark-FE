@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  width: 100vw;
+  height: 100%;
+  border-bottom: 1px solid #ebecf0;
+  padding: 0 2.4rem;
+
+  .title{
+    cursor: pointer;
+    color: #0d4ae5;
+     font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .hi-user{
+      font-size: 1.6rem;
+      padding: 1rem;
+      margin: 1rem;
+      cursor: pointer;
+    }
+    .logout{
+      font-size: 1.6rem;
+      padding: 1rem;
+      margin: 1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: #ED2553;
+
+      .icon-color{
+        color: #ED2553;
+      }
+    }
+  }
+}

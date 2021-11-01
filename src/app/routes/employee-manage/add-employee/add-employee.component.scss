@@ -1,0 +1,125 @@
+:host {
+  width: 100%;
+}
+
+.add-employee-container {
+  width: 100%;
+  padding: 1rem;
+
+  .category-title {
+    width: 100%;
+    font-size: 2.3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .add-employee-content {
+    display: flex;
+    flex-direction: column;
+
+    .input-field {
+      display: flex;
+      flex-direction: row;
+      padding: 1rem;
+      align-items: center;
+
+      .label-input {
+        font-size: 1.6rem;
+        width: 20%;
+
+        .required {
+          font-size: 1.6rem;
+          color: #ED2553;
+          display: inline-block;
+        }
+
+      }
+
+      .input-box {
+        width: 40%;
+
+        input {
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid #ccc;
+          font-size: 1.6rem;
+          border-radius: 3px;
+        }
+      }
+
+      .input-box-select{
+        width: 40%;
+        select{
+          width: 100%;
+          padding: 1rem;
+          font-size: 1.6rem;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          background: #fff;
+
+          option{
+            font-size: 1.6rem;
+            margin: .5rem 0;
+          }
+        }
+      }
+
+      .input-box-radio{
+        label{
+         font-size: 1.6rem;
+          padding: .3rem;
+          margin-right: 1rem;
+          font-weight: bold;
+        }
+      }
+
+      .alert-danger {
+        color: #ED2553;
+        position: absolute;
+      }
+    }
+  }
+
+  .add-employee-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem auto;
+
+    .button {
+      cursor: pointer;
+      color: #fff;
+      padding: 1rem;
+      margin: 1rem;
+      display: flex;
+      border-radius: 5px;
+      flex-direction: row;
+      align-items: center;
+
+      .button-icon{
+        display: inline-block;
+        color: #fff;
+        font-size: 1.6rem;
+        height: fit-content;
+      }
+
+      p{
+        font-size: 1.6rem;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
+    .back {
+      background: #3498db;
+    }
+
+    .reset {
+      background: #f9ca24;
+    }
+
+    .add {
+      background: #1dbf73;
+    }
+  }
+}

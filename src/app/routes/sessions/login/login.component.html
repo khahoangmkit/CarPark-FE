@@ -1,0 +1,24 @@
+<form autocomplete="off" autocapitalize="off" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+  <div class="login-container">
+    <div class="title">LOGIN</div>
+
+    <div class="input-content">
+      <label for="name">Username</label>
+      <div class="input_field">
+        <input type="text" name="username" id="name" formControlName="username">
+      </div>
+    </div>
+
+    <div class="input-content">
+      <label for="pass">Password</label>
+      <div class="input_field">
+        <input type="password" name="password" id="pass" formControlName="password">
+      </div>
+    </div>
+
+    <div class="button-login">
+      <button class="active" type="submit">LOG IN</button>
+    </div>
+
+  </div>
+</form>

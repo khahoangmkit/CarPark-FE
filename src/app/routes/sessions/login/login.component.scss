@@ -1,0 +1,91 @@
+.login-container {
+  width: 40%;
+  height: auto;
+  margin: 2em auto;
+  display: flex;
+  align-content: center;
+  padding: 3.5em 5em;
+  border-radius: 2px;
+  background: #fff;
+  flex-direction: column;
+
+  .title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-family: "Arial";
+    color: #ED2553;
+    width: 100%;
+    float: left;
+    line-height: 46px;
+    letter-spacing: 2px;
+  }
+
+
+  .input-content {
+    margin-bottom: 30px;
+    width: 100%;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input_field {
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+      position: relative;
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        background: #f5f4f4;
+        padding: 15px 25px;
+        border: 1px solid transparent;
+        font-size: 16px;
+        border-radius: 3px;
+      }
+    }
+
+    .error-message {
+      position: absolute;
+      color: #ED2553;
+    }
+
+  }
+
+  .button-login {
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #1dbf73;
+    cursor: pointer;
+
+    button {
+      padding: 15px;
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-weight: bold;
+      &.active {
+        background: #1dbf73;
+        color: #fff;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .register {
+    margin-top: 1em;
+    color: #3498db;
+    cursor: pointer;
+    align-self: flex-end;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
