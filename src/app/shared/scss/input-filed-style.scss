@@ -1,0 +1,61 @@
+.input-field {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: center;
+
+  .label-input {
+    font-size: 1.6rem;
+    width: 20%;
+
+    .required {
+      font-size: 1.6rem;
+      color: #ED2553;
+      display: inline-block;
+    }
+
+  }
+
+  .input-box {
+    width: 40%;
+
+    input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      font-size: 1.6rem;
+      border-radius: 3px;
+    }
+  }
+
+  .input-box-select{
+    width: 40%;
+    select{
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.6rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background: #fff;
+
+      option{
+        font-size: 1.6rem;
+        margin: .5rem 0;
+      }
+    }
+  }
+
+  .input-box-radio{
+    label{
+      font-size: 1.6rem;
+      padding: .3rem;
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  .alert-danger {
+    color: #ED2553;
+    position: absolute;
+  }
+}

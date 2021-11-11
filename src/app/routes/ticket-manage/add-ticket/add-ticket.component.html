@@ -1,0 +1,68 @@
+<div class="add-ticket-container">
+  <div class="category-title">Add Car</div>
+  <form [formGroup]="rfTicket" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-car-content">
+      <div class="input-field">
+        <div class="label-input">
+          Customer <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="customer" type="text" id="customer" placeholder="Enter customer"/>
+          <div class="alert-danger" *ngIf="this.rfTicket.controls.customer?.errors
+         && this.rfTicket.controls.customer?.touched">Customer is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Booking Time <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="bookingTime" type="text" id="bookingTime" placeholder="Enter park place"/>
+          <div class="alert-danger" *ngIf="this.rfTicket.controls.bookingTime?.errors
+         && this.rfTicket.controls.bookingTime?.touched">Booking Time is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Trip <p class="required">(*)</p>
+        </div>
+        <div class="input-box-select">
+          <select formControlName="trip" name="trip" id="trip">
+            <option *ngFor="let element of listTrip" value="{{element.id}}">{{element.destination}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="this.rfTicket.controls.trip?.errors
+         && this.rfTicket.controls.trip?.touched">Trip is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          License Place <p class="required">(*)</p>
+        </div>
+        <div class="input-box-select">
+          <select formControlName="car" name="car" id="car">
+            <option *ngFor="let element of listCar" value="{{element.licensePlate}}">{{element.licensePlate}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="this.rfTicket.controls.car?.errors
+         && this.rfTicket.controls.car?.touched">License Place is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="add-ticket-footer">
+        <!--        <div class="back button" (click)="navigationList()">-->
+        <!--          <mat-icon class="button-icon">fast_rewind</mat-icon>-->
+        <!--          <p>Back</p>-->
+        <!--        </div>-->
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">add</mat-icon>
+          <p>Add</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -34,9 +34,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.router.url)
   }
 
   onSubmit() {
+    console.log(this.formLogin.value)
     if( this.formLogin.controls.username.errors || this.formLogin.controls.password.errors) {
       this.toastr.error('Username or password invalid');
       console.log('Username or password invalid');
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
         password: this.formLogin.controls.password.value
       }
       this.authService.login(data).subscribe((response : any) => {
-        this.cookieService.set(AppConstant.ACCESS_TOKEN, response.tokens.access.token);
+        this.cookieService.set(AppConstant.ACCESS_TOKEN, response.token);
         this.router.navigate(['/home']);
       })
     }

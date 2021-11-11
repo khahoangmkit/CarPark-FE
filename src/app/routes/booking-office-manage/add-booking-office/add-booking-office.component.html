@@ -1,0 +1,100 @@
+<div class="add-booking-office-container">
+  <div class="category-title">Add booking office</div>
+  <form [formGroup]="rfBookingOffice" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-booking-office-content">
+      <div class="input-field">
+        <div class="label-input">
+          Booking office name <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="officeName" type="text" id="office_name" placeholder="Enter office name"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.officeName?.errors
+         && this.rfBookingOffice.controls.officeName?.touched">Office Name is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Trip <p class="required">(*)</p>
+        </div>
+        <div class="input-box-select">
+          <select formControlName="trip" name="trip" id="trip">
+            <option *ngFor="let element of listTrip" value="{{element.id}}">{{element.destination}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.trip?.errors
+         && this.rfBookingOffice.controls.trip?.touched">Trip is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Phone number <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="officePhone" type="text" id="office_phone" placeholder="Enter office phone"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.officePhone?.errors
+         && this.rfBookingOffice.controls.officePhone?.touched">Office Phone is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Office Place <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="officePlace" type="text" id="office_place" placeholder="Enter office place"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.officePlace?.errors
+         && this.rfBookingOffice.controls.officePlace?.touched">Office Place is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Office Price <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="officePrice" type="text" id="office_price" placeholder="Enter office price"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.officePrice?.errors
+         && this.rfBookingOffice.controls.officePrice?.touched">Office Price is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Contract Deadline From <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="startContractDeadline" type="text" id="startContractDeadline" placeholder="dd/mm/yyyy"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.startContractDeadline?.errors
+         && this.rfBookingOffice.controls.startContractDeadline?.touched">Start Contract Deadline is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Contract Deadline To <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="endContractDeadline" type="text" id="endContractDeadline" placeholder="dd/mm/yyyy"/>
+          <div class="alert-danger" *ngIf="this.rfBookingOffice.controls.endContractDeadline?.errors
+         && this.rfBookingOffice.controls.endContractDeadline?.touched">End Contract Deadline is required!
+          </div>
+        </div>
+      </div>
+
+      <div class="add-booking-office-footer">
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">add</mat-icon>
+          <p>Add</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

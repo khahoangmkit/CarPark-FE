@@ -1,1 +1,104 @@
-<p>employee-manage works!</p>
+<div class="update-employee">
+  <div class="category-title">Add Employee</div>
+  <form [formGroup]="rfEmployee" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-employee-content">
+      <div class="input-field">
+        <div class="label-input">
+          Full Name <p class="required">(*)</p>
+        </div>
+        <div class="input-box" [formGroup]="rfEmployee">
+          <input formControlName="fullName" type="text" id="full_name" placeholder="Enter full name"/>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.fullName?.errors
+         && this.rfEmployee.controls.fullName?.touched">Full Name is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Phone Number <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="phone" type="text" id="phone" placeholder="Enter number phone"/>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.phone?.errors
+         && this.rfEmployee.controls.phone?.touched">Phone is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Date Of Birth <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="dateOfBirth" type="text" id="date_of_birth" placeholder="dd/mm/yyyy"/>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.dateOfBirth?.errors
+         && this.rfEmployee.controls.dateOfBirth?.touched">Date Of Birth is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Sex <p class="required">(*)</p>
+        </div>
+        <div class="input-box-radio">
+          <input formControlName="sex" type="radio" id="male" name="sex" value="Male">
+          <label for="male">Male</label>
+          <input formControlName="sex" type="radio" id="female" name="sex" value="Female">
+          <label for="female"> Female</label>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.sex?.errors
+         && this.rfEmployee.controls.sex?.touched">Sex is required!</div>
+        </div>
+
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Address <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="address" type="text" id="address" placeholder="Enter Address"/>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.address?.errors
+         && this.rfEmployee.controls.address?.touched">Address is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Email <p class="required">(*)</p>
+        </div>
+        <div class="input-box" >
+          <input formControlName="email" type="text" id="email" placeholder="Enter Email"/>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.email?.errors
+         && this.rfEmployee.controls.email?.touched">Email is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Department <p class="required">(*)</p>
+        </div>
+        <div class="input-box-select">
+          <select formControlName="department" name="department" id="department">
+            <option value="Employee">Employee</option>
+            <option value="Parking">Parking</option>
+            <option value="Service">Service</option>
+          </select>
+          <div class="alert-danger" *ngIf="this.rfEmployee.controls.department?.errors
+         && this.rfEmployee.controls.department?.touched">Department is required!</div>
+        </div>
+      </div>
+
+      <div class="add-employee-footer">
+
+        <div class="delete button" (click)="removeEmployee()" >
+          <mat-icon class="button-icon">delete</mat-icon>
+          <p>Delete</p>
+        </div>
+
+        <div class="update button"  mat-dialog-close (click)="onSubmit()">
+          <mat-icon class="button-icon">update</mat-icon>
+          <p>Update</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

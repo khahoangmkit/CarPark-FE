@@ -1,0 +1,41 @@
+<div class="list-booking-office">
+  <div class="category-title">
+    {{title}}
+  </div>
+
+  <div class="search-container">
+    <app-search
+      placeholder="Search booking office..."
+    >
+    </app-search>
+  </div>
+  <div class="list-data">
+    <table mat-table [dataSource]="listData">
+
+      <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Booking office">
+        <th mat-header-cell *matHeaderCellDef> Booking office </th>
+        <td mat-cell *matCellDef="let element"> {{element.officeName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Trip">
+        <th mat-header-cell *matHeaderCellDef> Trip </th>
+        <td mat-cell *matCellDef="let element"> {{element.trip.destination}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element" class="view-action" (click)="viewBookingOfficeDetail(element)"> <mat-icon>visibility</mat-icon> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

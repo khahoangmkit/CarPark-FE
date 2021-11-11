@@ -1,0 +1,65 @@
+:host {
+  width: 100%;
+}
+
+.update-car-container {
+  width: 100%;
+  padding: 1rem;
+
+  .category-title {
+    width: 100%;
+    font-size: 2.3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .update-car-content {
+    display: flex;
+    flex-direction: column;
+
+    @import "src/app/shared/scss/input-filed-style";
+  }
+
+  .update-car-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem auto;
+
+    .button {
+      cursor: pointer;
+      color: #fff;
+      padding: 1rem;
+      margin: 1rem;
+      display: flex;
+      border-radius: 5px;
+      flex-direction: row;
+      align-items: center;
+
+      .button-icon{
+        display: inline-block;
+        color: #fff;
+        font-size: 1.6rem;
+        height: fit-content;
+      }
+
+      p{
+        font-size: 1.6rem;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
+    .back {
+      background: #3498db;
+    }
+
+    .delete {
+      background: #ED2553;
+    }
+
+    .add {
+      background: #1dbf73;
+    }
+  }
+}

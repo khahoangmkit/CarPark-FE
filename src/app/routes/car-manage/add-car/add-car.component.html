@@ -1,0 +1,80 @@
+<div class="add-car-container">
+  <div class="category-title">Add Car</div>
+  <form [formGroup]="rfCar" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-car-content">
+      <div class="input-field">
+        <div class="label-input">
+          License Plate <p class="required">(*)</p>
+        </div>
+        <div class="input-box" [formGroup]="rfCar">
+          <input formControlName="licensePlate" type="text" id="license_plate" placeholder="Enter license Plate"/>
+          <div class="alert-danger" *ngIf="this.rfCar.controls.licensePlate?.errors
+         && this.rfCar.controls.licensePlate?.touched">License Plate is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Car Color <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="carColor" type="text" id="car_color" placeholder="Enter car color"/>
+          <div class="alert-danger" *ngIf="this.rfCar.controls.carColor?.errors
+         && this.rfCar.controls.carColor?.touched">Car Color is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Car Type <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="carType" type="text" id="car_type" placeholder="Enter car type"/>
+          <div class="alert-danger" *ngIf="this.rfCar.controls.Area?.errors
+         && this.rfCar.controls.Area?.touched">Car Type is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Company
+        </div>
+        <div class="input-box">
+          <input formControlName="company" type="text" id="company" placeholder="Enter Company"/>
+          <div class="alert-danger" *ngIf="this.rfCar.controls.company?.errors
+         && this.rfCar.controls.company?.touched">Company is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Parking Lot <p class="required">(*)</p>
+        </div>
+        <div class="input-box-select">
+          <select formControlName="parkingLot" name="parkingLot" id="parking_lot">
+            <option *ngFor="let element of listParkingLot" value="{{element.id}}">{{element.parkName}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="this.rfCar.controls.department?.errors
+         && this.rfCar.controls.department?.touched">Department is required!</div>
+        </div>
+      </div>
+
+      <div class="add-car-footer">
+<!--        <div class="back button" (click)="navigationList()">-->
+<!--          <mat-icon class="button-icon">fast_rewind</mat-icon>-->
+<!--          <p>Back</p>-->
+<!--        </div>-->
+
+<!--        <div class="reset button" (click)="onResetForm()">-->
+<!--          <mat-icon class="button-icon">restart_alt</mat-icon>-->
+<!--          <p>Reset</p>-->
+<!--        </div>-->
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">add</mat-icon>
+          <p>Add</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

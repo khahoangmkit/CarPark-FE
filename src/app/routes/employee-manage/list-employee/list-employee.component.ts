@@ -4,6 +4,8 @@ import {EmployeeDto} from "../../../_models/employee-dto";
 import {MatPaginator} from "@angular/material/paginator";
 import {EmployeeService} from "../../../_services/employee.service";
 import {DatePipe} from "@angular/common";
+import {MatDialog} from "@angular/material/dialog";
+import {EmployeeManageComponent} from "../employee-manage.component";
 
 @Component({
   selector: 'app-list-employee',
@@ -15,11 +17,11 @@ export class ListEmployeeComponent implements OnInit {
   title: string = "List Employees"
   displayedColumns: string[] = ['Id', 'Name', 'Address', 'Date Of Birth', 'Phone Number', 'Department', 'Action'];
   listData: any;
-  dataSource: any;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(
-    private readonly employeeService: EmployeeService
+    private readonly employeeService: EmployeeService,
+    public dialog: MatDialog
   ) {
   }
 
@@ -32,6 +34,19 @@ export class ListEmployeeComponent implements OnInit {
       this.listData = new MatTableDataSource<EmployeeDto>(response.data);
       this.listData.paginator = this.paginator;
     });
+  }
+
+  openEmployeeDetail(employee: any): void{
+    const dialogRef = this.dialog.open(EmployeeManageComponent,{
+      width: '80%',
+      data: {
+        employee: employee
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllEmployee();
+    })
   }
 
 }

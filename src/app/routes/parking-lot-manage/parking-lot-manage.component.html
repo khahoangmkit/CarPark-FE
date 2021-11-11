@@ -1,1 +1,63 @@
-<p>parking-lot-manage works!</p>
+<div class="update-car-container">
+  <div class="category-title">Add Car</div>
+  <form [formGroup]="this.rfParkingLot" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="update-car-content">
+      <div class="input-field">
+        <div class="label-input">
+          Park Name <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="parkName" type="text" id="park_name" placeholder="Enter park name"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.parkName?.errors
+         && this.rfParkingLot.controls.parkName?.touched">Park Name is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Place <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="place" type="text" id="place" placeholder="Enter park place"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.place?.errors
+         && this.rfParkingLot.controls.place?.touched">Park Place is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Area <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="area" type="text" id="area" placeholder="Enter park area"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.area?.errors
+         && this.rfParkingLot.controls.area?.touched">Park Area is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Price <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="price" type="text" id="price" placeholder="Enter price"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.price?.errors
+         && this.rfParkingLot.controls.price?.touched">Park price is required!</div>
+        </div>
+      </div>
+
+      <div class="update-car-footer">
+
+        <div class="delete button" (click)="onDelete()">
+          <mat-icon class="button-icon">delete</mat-icon>
+          <p>Delete</p>
+        </div>
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">update</mat-icon>
+          <p>Update</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

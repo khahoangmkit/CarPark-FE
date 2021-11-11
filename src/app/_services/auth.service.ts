@@ -3,6 +3,7 @@ import {BaseService} from "./base.service";
 import {AppConstant} from "../_constant/app-constant";
 import {CookieService} from "ngx-cookie-service";
 import {LoginRequestDto} from "../_models/login-request-dto";
+import {of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AuthService {
   ) { }
 
   login(infoLogin: LoginRequestDto) {
-    return this.baseService.post(`${AppConstant.ApiUrl}/auth/login`, infoLogin)
+    return this.baseService.post(`${AppConstant.ApiUrl}Authentication/Login`, infoLogin)
   }
 
   logout() {

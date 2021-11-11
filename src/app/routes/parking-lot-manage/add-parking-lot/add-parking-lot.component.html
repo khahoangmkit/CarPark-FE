@@ -1,0 +1,67 @@
+<div class="add-parking-lot-container">
+  <div class="category-title">Add Car</div>
+  <form [formGroup]="rfParkingLot" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-car-content">
+      <div class="input-field">
+        <div class="label-input">
+          Park Name <p class="required">(*)</p>
+        </div>
+        <div class="input-box" [formGroup]="rfParkingLot">
+          <input formControlName="parkName" type="text" id="park_name" placeholder="Enter park name"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.parkName?.errors
+         && this.rfParkingLot.controls.parkName?.touched">Park Name is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Place <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="place" type="text" id="place" placeholder="Enter park place"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.place?.errors
+         && this.rfParkingLot.controls.place?.touched">Park Place is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Area <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="area" type="text" id="area" placeholder="Enter park area"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.area?.errors
+         && this.rfParkingLot.controls.area?.touched">Park Area is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Price <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="price" type="text" id="price" placeholder="Enter price"/>
+          <div class="alert-danger" *ngIf="this.rfParkingLot.controls.price?.errors
+         && this.rfParkingLot.controls.price?.touched">Park price is required!</div>
+        </div>
+      </div>
+
+      <div class="add-parking-lot-footer">
+        <!--        <div class="back button" (click)="navigationList()">-->
+        <!--          <mat-icon class="button-icon">fast_rewind</mat-icon>-->
+        <!--          <p>Back</p>-->
+        <!--        </div>-->
+
+                <div class="reset button" (click)="onResetForm()">
+                  <mat-icon class="button-icon">restart_alt</mat-icon>
+                  <p>Reset</p>
+                </div>
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">add</mat-icon>
+          <p>Add</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

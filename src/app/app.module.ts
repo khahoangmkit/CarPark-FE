@@ -31,6 +31,17 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { ListCarComponent } from './routes/car-manage/list-car/list-car.component';
+import { AddCarComponent } from './routes/car-manage/add-car/add-car.component';
+import { AddBookingOfficeComponent } from './routes/booking-office-manage/add-booking-office/add-booking-office.component';
+import { ListBookingOfficeComponent } from './routes/booking-office-manage/list-booking-office/list-booking-office.component';
+import { ListParkingLotComponent } from './routes/parking-lot-manage/list-parking-lot/list-parking-lot.component';
+import { AddParkingLotComponent } from './routes/parking-lot-manage/add-parking-lot/add-parking-lot.component';
+import { AddTripComponent } from './routes/trip-manage/add-trip/add-trip.component';
+import { ListTripComponent } from './routes/trip-manage/list-trip/list-trip.component';
+import { ListTicketComponent } from './routes/ticket-manage/list-ticket/list-ticket.component';
+import { AddTicketComponent } from './routes/ticket-manage/add-ticket/add-ticket.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +62,16 @@ import {MatTableModule} from "@angular/material/table";
     SidebarComponent,
     HeaderComponent,
     SearchComponent,
+    ListCarComponent,
+    AddCarComponent,
+    AddBookingOfficeComponent,
+    ListBookingOfficeComponent,
+    ListParkingLotComponent,
+    AddParkingLotComponent,
+    AddTripComponent,
+    ListTripComponent,
+    ListTicketComponent,
+    AddTicketComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +86,8 @@ import {MatTableModule} from "@angular/material/table";
     MatInputModule,
     MatButtonModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

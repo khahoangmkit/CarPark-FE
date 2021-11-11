@@ -45,9 +45,9 @@ export class AddEmployeeComponent implements OnInit {
     });
     return isError;
   }
+
   onSubmit() {
     if(!this.isFormError()){
-      console.log('click', this.rfEmployee);
       const data = {
         "fullName": this.rfEmployee.value.fullName,
         "dateOfBirth": new Date(this.rfEmployee.value.dateOfBirth),

@@ -19,4 +19,12 @@ export class EmployeeService {
   addEmployee(data: any) {
     return this.baseService.post(`${AppConstant.ApiUrl}Employee/AddEmployee`, data);
   }
+
+  updateEmployee(data: any) {
+    return this.baseService.put(`${AppConstant.ApiUrl}Employee/UpdateEmployee`, data);
+  }
+
+  deleteEmployee(id: number) {
+    return this.baseService.delete(`${AppConstant.ApiUrl}Employee/RemoveEmployee/${id}`,id)
+  }
 }

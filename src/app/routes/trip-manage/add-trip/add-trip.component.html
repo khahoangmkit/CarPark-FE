@@ -1,0 +1,80 @@
+<div class="add-trip-container">
+  <div class="category-title">Add Trip</div>
+  <form [formGroup]="rfTrip" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="add-trip-content">
+      <div class="input-field">
+        <div class="label-input">
+          Destination <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="destination" type="text" id="destination" placeholder="Enter Destination"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.destination?.errors
+         && this.rfTrip.controls.destination?.touched">Destination is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Departure Time <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="departureTime" type="text" id="car_color" placeholder="--:-- --"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.departureTime?.errors
+         && this.rfTrip.controls.departureTime?.touched">Departure Time is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Driver <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="driver" type="text" id="driver" placeholder="Enter driver"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.driver?.errors
+         && this.rfTrip.controls.driver?.touched">Driver is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Car Type <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="carType" type="text" id="car_type" placeholder="Enter car type"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.carType?.errors
+         && this.rfTrip.controls.carType?.touched">Car Type is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Maximum online ticket number  <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="maximumOnlineTicketNumber" type="text" id="maximumOnlineTicketNumber" placeholder="Enter Company"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.maximumOnlineTicketNumber?.errors
+         && this.rfTrip.controls.maximumOnlineTicketNumber?.touched">Maximum Online Ticket Number is required!</div>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <div class="label-input">
+          Departure date  <p class="required">(*)</p>
+        </div>
+        <div class="input-box">
+          <input formControlName="departureDate" type="text" id="departureDate" placeholder="dd/mm/yyyy"/>
+          <div class="alert-danger" *ngIf="this.rfTrip.controls.departureDate?.errors
+         && this.rfTrip.controls.departureDate?.touched">Departure Date is required!</div>
+        </div>
+      </div>
+
+      <div class="add-trip-footer">
+
+        <div class="add button" (click)="onSubmit()">
+          <mat-icon class="button-icon">add</mat-icon>
+          <p>Add</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
